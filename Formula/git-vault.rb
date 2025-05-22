@@ -7,20 +7,20 @@ class GitVault < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-macos-arm64.tar.gz"
-      sha256 "c410fda815be83a5dd5b382c01bedee03bc50ae832da7ddad2fce1297fa3c04e"
+      sha256 "ca6ce8a55070a91727e7460856216093c15d9d59850fcdc454a387449cd84c76"
     else
       url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-macos.tar.gz"
-      sha256 "6d17ce3f67825bb652e6ee1579c5a73fe9f0f75a52858a6237c22ae663b53ba4"
+      sha256 "50da288dec0e86b4e7180992b40fb05f6eae6ba32e4253d4218b4c3b9834af37"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-linux-arm64.tar.gz"
-      sha256 "f9d9f794ec6472198dd669fa0194b8661406d429e41e3fbb76536f24639c362f"
+      sha256 "ab2912610c5dd34559fc210343b783f362504bfa1bfb5243258fe15a3ba70d65"
     else
       url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-linux.tar.gz"
-      sha256 "206cd710a35e9d83bbb42c98d67b95c1c4cae355a8fcb1986f85307799961cda"
+      sha256 "ffda0c764662d3e83f121ca3cd4b7a798d2eb3ec51808e1c80f2172fa3c920c7"
     end
   end
 
@@ -28,17 +28,20 @@ class GitVault < Formula
     # Install the appropriate binary based on platform
     if Hardware::CPU.arm?
       if OS.mac?
-        bin.install "gv-aarch64-apple-darwin" => "git-vault"
+        bin.install "gv-aarch64-apple-darwin" => "gv"
       else
-        bin.install "gv-aarch64-unknown-linux-gnu" => "git-vault"
+        bin.install "gv-aarch64-unknown-linux-gnu" => "gv"
       end
     else
       if OS.mac?
-        bin.install "gv-x86_64-apple-darwin" => "git-vault"
+        bin.install "gv-x86_64-apple-darwin" => "gv"
       else
-        bin.install "gv-x86_64-unknown-linux-gnu" => "git-vault"
+        bin.install "gv-x86_64-unknown-linux-gnu" => "gv"
       end
     end
+
+    # Create git-vault symlink for backward compatibility
+    bin.install_symlink "gv" => "git-vault"
   end
 
   test do
