@@ -1,26 +1,26 @@
 class GitVault < Formula
   desc "Drop-dead simple solution for sharing sensitive things in git repositories"
   homepage "https://github.com/zackiles/git-vault"
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-macos-arm64.tar.gz"
-      sha256 "ca6ce8a55070a91727e7460856216093c15d9d59850fcdc454a387449cd84c76"
+      url "https://github.com/zackiles/git-vault/releases/download/v0.0.5/git-vault-macos-arm64.tar.gz"
+      sha256 "62dad99c056406346a6aa292734a1041f3408c92e13a06b8950753488dbcef76"
     else
-      url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-macos.tar.gz"
-      sha256 "50da288dec0e86b4e7180992b40fb05f6eae6ba32e4253d4218b4c3b9834af37"
+      url "https://github.com/zackiles/git-vault/releases/download/v0.0.5/git-vault-macos.tar.gz"
+      sha256 "92747a2c932087fae496937e929d09b898f115efa034ba6e709d80a23aa8e96f"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-linux-arm64.tar.gz"
-      sha256 "ab2912610c5dd34559fc210343b783f362504bfa1bfb5243258fe15a3ba70d65"
+      url "https://github.com/zackiles/git-vault/releases/download/v0.0.5/git-vault-linux-arm64.tar.gz"
+      sha256 "b63e7d2b55f3b186f3cc8101b28fee7beda0d1ce62d2eeff799bcd2659e26163"
     else
-      url "https://github.com/zackiles/git-vault/releases/download/v0.0.4/git-vault-linux.tar.gz"
-      sha256 "ffda0c764662d3e83f121ca3cd4b7a798d2eb3ec51808e1c80f2172fa3c920c7"
+      url "https://github.com/zackiles/git-vault/releases/download/v0.0.5/git-vault-linux.tar.gz"
+      sha256 "2cb3431cf5985f7fde0054d59037f13cd2ac5377b2bedf9c799c86b0a87ce10a"
     end
   end
 
